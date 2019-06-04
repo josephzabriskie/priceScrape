@@ -7,15 +7,12 @@ using namespace std;
 
 int main(){
     cout << "Welome to my crappy webscraper" << endl;
-    CURL *curl;
     CURLcode res;
     curl_global_init(CURL_GLOBAL_DEFAULT);
-    curl = curl_easy_init();
+    auto curl = curl_easy_init();
     if(curl){
         curl_easy_setopt(curl, CURLOPT_URL, "https://www.google.com");
-        cout << "Set options" << endl;
         res = curl_easy_perform(curl);
-        cout << "Performed" << endl;
         if(res != CURLE_OK){
             fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
         }

@@ -1,0 +1,6 @@
+#Gitignore
+#Compiled stuff
+*.exe
+*.o
+
+.vscode/*
